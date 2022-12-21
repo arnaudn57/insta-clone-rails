@@ -1,0 +1,14 @@
+<h2>Show d'un canal</h2>
+
+<div class="container">
+  <%= simple_form_for [@canal, @message] do |f| %>
+    <%= f.input :message %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+
+<% @messages.each do |message| %>
+  <p><%= User.find(message.user_id).username%> - <%= message.message %></p>
+
+<% end %>

@@ -1,0 +1,8 @@
+<h2>Post new</h2>
+
+<div class="container">
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

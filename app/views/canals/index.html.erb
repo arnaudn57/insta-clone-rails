@@ -1,0 +1,7 @@
+<div class="container">
+  <% @canals.each do |canal| %>
+    <h2><%= canal.id %></h2>
+    <p><%= canal.other_user %></p>
+    <%= link_to 'Accéder au canal', canal_path(canal.id) %>
+  <% end %>
+</div>

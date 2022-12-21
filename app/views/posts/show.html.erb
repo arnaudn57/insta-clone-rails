@@ -1,0 +1,17 @@
+<h2>Post Show</h2>
+
+<div class="container d-flex flex-column bg-danger">
+
+  <p><%= @post.id %></p>
+  <h2><%= @post.content%></h2>
+  <%= simple_form_for [@post, @comment] do |f| %>
+    <%= f.input :comment_content %>
+    <%= f.button :submit %>
+  <% end %>
+  <%@comments = Post.find(@post.id).comments%>
+  <div class="d-block">
+    <% @comments.each do |comment| %>
+      <p><%= comment.comment_content%></p>
+    <% end %>
+  </div>
+</div>
